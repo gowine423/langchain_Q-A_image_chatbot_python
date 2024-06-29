@@ -37,7 +37,7 @@ def input_image_setup(uploaded_file):
 
 ##initialize our streamlit app
 st.set_page_config(page_title="Gemini Image Demo")
-st.header("🎊SURAT Q&A ChatBot 🖼️ 🫰")
+st.header("🎊Image Q&A ChatBot 🖼️ 🫰")
 input=st.text_input("Input Prompt: ",key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image=""   
@@ -58,3 +58,11 @@ if submit:
     response=get_gemini_response(input_prompt,image_data,input)
     st.subheader("The Response is")
     st.write(response)
+
+footer = """
+---
+#### Made By [Surat Banerjee](https://www.linkedin.com/in/surat-banerjee/)
+For Any Queries, Reach out on [Portfolio](https://suratbanerjee.wixsite.com/myportfoliods)  
+"""
+
+st.markdown(footer, unsafe_allow_html=True)
